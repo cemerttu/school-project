@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import React, { useState } from "react";
+import Header from "./components/Header";
+import Footer from "./components/UnemploymentDashboard";
+import UnemploymentDashboard from "./components/UnemploymentDashboard";
+import YouthUnemployment from "./components/YouthUnemployment";
+import RegionalAnalysis from "./components/RegionalAnalysis";
+import Solutions from "./components/Solutions";
 
-function App() {
+export default function App() {
+  const [currentView, setCurrentView] = useState("dashboard");
+
+  const renderContent = () => {
+    switch(currentView) {
+      case "youth":
+        return <YouthUnemployment />;
+      case "regional":
+        return <RegionalAnalysis />;
+      case "solutions":
+        return <Solutions />;
+      default:
+        return <UnemploymentDashboard />;
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 text-gray-800 antialiased">
+      <Header currentView={currentView} setCurrentView={setCurrentView} />
+      <main className="max-w-6xl mx-auto px-4 py-8">
+        {renderContent()}
+      </main>
+      <Footer />
     </div>
   );
 }
-
-export default App;
