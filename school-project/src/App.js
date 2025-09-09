@@ -1,22 +1,22 @@
 // App.js
-import React, { useState } from "react";
-import Header from "./components/Header";
-import Footer from "./components/UnemploymentDashboard";
-import UnemploymentDashboard from "./components/UnemploymentDashboard";
-import YouthUnemployment from "./components/YouthUnemployment";
-import RegionalAnalysis from "./components/RegionalAnalysis";
-import Solutions from "./components/Solutions";
+import React, { useState } from 'react';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import UnemploymentDashboard from './components/UnemploymentDashboard';
+import YouthUnemployment from './components/YouthUnemployment';
+import RegionalAnalysis from './components/RegionalAnalysis';
+import Solutions from './components/Solutions';
 
-export default function App() {
-  const [currentView, setCurrentView] = useState("dashboard");
+function App() {
+  const [currentView, setCurrentView] = useState('dashboard');
 
   const renderContent = () => {
     switch(currentView) {
-      case "youth":
+      case 'youth':
         return <YouthUnemployment />;
-      case "regional":
+      case 'regional':
         return <RegionalAnalysis />;
-      case "solutions":
+      case 'solutions':
         return <Solutions />;
       default:
         return <UnemploymentDashboard />;
@@ -33,3 +33,5 @@ export default function App() {
     </div>
   );
 }
+
+export default App;

@@ -14,9 +14,12 @@ const RegionalAnalysis = () => {
   ];
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 fade-in">
       <div className="bg-white rounded-xl shadow-md p-6">
-        <h2 className="text-2xl font-bold text-gray-800 mb-6">Regional Unemployment Analysis</h2>
+        <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+          <i className="fas fa-map-marked-alt mr-2 text-green-600"></i>
+          Regional Unemployment Analysis
+        </h2>
         
         <div className="overflow-x-auto">
           <table className="min-w-full divide-y divide-gray-200">
@@ -53,11 +56,14 @@ const RegionalAnalysis = () => {
       </div>
 
       <div className="bg-white rounded-xl shadow-md p-6">
-        <h3 className="text-xl font-semibold mb-4">Regional Disparities</h3>
+        <h3 className="text-xl font-semibold mb-4 flex items-center">
+          <i className="fas fa-chart-bar mr-2 text-blue-500"></i>
+          Regional Disparities
+        </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <h4 className="font-medium text-blue-700 mb-2">Highest Unemployment</h4>
-            <div className="bg-red-50 p-4 rounded-lg">
+            <div className="bg-red-50 p-4 rounded-lg stat-card">
               <p className="text-lg font-semibold">North Eastern Region</p>
               <p className="text-2xl font-bold text-red-700">15.9%</p>
               <p className="text-sm">Overall unemployment rate</p>
@@ -66,7 +72,7 @@ const RegionalAnalysis = () => {
           
           <div>
             <h4 className="font-medium text-blue-700 mb-2">Lowest Unemployment</h4>
-            <div className="bg-green-50 p-4 rounded-lg">
+            <div className="bg-green-50 p-4 rounded-lg stat-card">
               <p className="text-lg font-semibold">Central Region</p>
               <p className="text-2xl font-bold text-green-700">6.8%</p>
               <p className="text-sm">Overall unemployment rate</p>
